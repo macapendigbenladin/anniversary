@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 2nd Anniversary, Love!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffe6eb;
+            font-family: 'Poppins', sans-serif;
+            color: #4a4a4a;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+            cursor: pointer;
+        }
+
+        h1, h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #d1495b;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-top: 40px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-top: 30px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .letter {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        .timer-box {
+            background: #ffb3c6;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(255, 179, 198, 0.5);
+        }
+
+        .story-timeline {
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .story-timeline p {
+            background: #fff0f3;
+            padding: 15px;
+            border-left: 5px solid #ff8fab;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .album {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .album img, .album video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .album img:hover, .album video:hover {
+            transform: scale(1.05);
+        }
+
+        /* Interactive Flower Animation */
+        .flower {
+            position: fixed;
+            font-size: 24px;
+            pointer-events: none;
+            animation: fall 1.5s ease-out forwards;
+            z-index: 9999;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0) scale(0.5); opacity: 1; }
+            100% { transform: translateY(80px) scale(1.5) rotate(45deg); opacity: 0; }
+        }
+
+        .instruction {
+            font-size: 0.9rem;
+            color: #999;
+            margin-top: -15px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Happy 2nd Anniversary, LOVE! ❤️</h1>
+        <p class="instruction">(Click anywhere on the screen for a surprise!)</p>
+
+        <div class="section">
+            <h2>Our Time Together</h2>
+            <p><strong>The day we met:</strong> September 9, 2022</p>
+            <p><strong>The day we became official:</strong> November 7, 2024</p>
+            
+            <div class="timer-box" id="timer">
+                Loading our beautiful moments...
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>My Letter to You</h2>
+            <div class="letter">
+                <p>Dear Love,</p>
+                <p>First of all, ay second na pala kay 2nd anniversary na natin yeheyyyyy HAHHAHA. So yun ngaa, nagtagal na tayo, kung sasali natin yung time na MU pa tayo, siguro mag 5 years na or 4 years to be exact, isipin mo yun tayo padin, and Insha Allah kung hindi ka magkagusto sa iba, tayo padin huhu.</p>
+                <p>Sorry sa lahat lahat, sa mga away at tampuhan natin dahil sa puro selos ko, san maintindihan mo.</p>
+                <p>Sana magtagal tayo, likee married na ba ganon HAHAHAH. Goodluckk sa pagiging Nurse mo futuree Right Now🥰.</p>
+                <p>I LOVE YOUUUUUU❤️❤️❤️</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Our Story So Far...</h2>
+            <div class="story-timeline">
+                <p>"Nag ask ako sayo kung ka group kita kasi mag pa add sana ako then sabi ni Amanie 'ay bagay' AHHAHAH"</p>
+                <p>"Then nag chat ako sayo kasi yun nga HAHAHAH"</p>
+                <p>"Then for almost many years, dami na nating napagdaanan"</p>
+                <p>"Strong padin tayo 💪❤️"</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Our Album</h2>
+            <div class="album">
+                <!-- Images -->
+                <img src="3143.jpg" alt="Our Memory">
+                <img src="3144.jpg" alt="Our Memory">
+                <img src="3149.jpg" alt="Our Memory">
+                <img src="3150.jpg" alt="Our Memory">
+                <img src="3151.jpg" alt="Our Memory">
+                <img src="3152.jpg" alt="Our Memory">
+                <img src="3148.jpg" alt="Our Memory">
+                
+                <!-- Videos -->
+                <video src="799.mp4" controls preload="metadata"></video>
+                <video src="3146.mp4" controls preload="metadata"></video>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Live Timer Calculation ---
+        function updateTimer() {
+            const startDate = new Date('November 7, 2024 00:00:00').getTime();
+            const now = new Date().getTime();
+            const difference = now - startDate;
+
+            if (difference < 0) {
+                document.getElementById('timer').innerHTML = "The big day is almost here!";
+                return;
+            }
+
+            const years = Math.floor(difference / (1000 * 60 * 60 * 24 * 365.25));
+            const days = Math.floor((difference % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('timer').innerHTML = 
+                years + " Years, " + 
+                days + " Days, " + 
+                hours + " Hours, " + 
+                minutes + " Minutes, " + 
+                seconds + " Seconds";
+        }
+        
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        // --- Interactive Flower Click Effect ---
+        const emojis = ['🌸', '🌹', '✨', '💖', '🌺'];
+
+        document.addEventListener('click', function(e) {
+            // Create 4-6 flowers per click
+            const flowerCount = Math.floor(Math.random() * 3) + 4; 
+            
+            for(let i = 0; i < flowerCount; i++) {
+                createFlower(e.clientX, e.clientY);
+            }
+        });
+
+        function createFlower(x, y) {
+            const flower = document.createElement('div');
+            // Pick a random emoji from the list
+            flower.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+            flower.className = 'flower';
+            
+            // Randomize spread
+            const offsetX = (Math.random() * 60) - 30;
+            const offsetY = (Math.random() * 60) - 30;
+            
+            flower.style.left = (x + offsetX) + 'px';
+            flower.style.top = (y + offsetY) + 'px';
+            
+            document.body.appendChild(flower);
+
+            // Remove element after animation finishes
+            setTimeout(() => {
+                flower.remove();
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
